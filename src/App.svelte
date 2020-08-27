@@ -1,6 +1,5 @@
 <script>
-  export let name;
-  import TrivieCard from "./components/TriviaCard.svelte";
+  import TriviaCard from "./components/TriviaCard.svelte";
 </script>
 
 <style>
@@ -26,11 +25,6 @@
 </style>
 
 <main>
-  <h1>Hello {name}!</h1>
-  <p>
-    Visit the
-    <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
-    to learn how to build Svelte apps.
-  </p>
+  <h1>Trivia Game</h1>
   <TriviaCard />
 </main>
