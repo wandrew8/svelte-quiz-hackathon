@@ -104,6 +104,8 @@
   }
   select {
     display: inline;
+    margin-right: 0.1rem;
+    padding: 1rem;
   }
   button {
     background-color: #1abc9c;

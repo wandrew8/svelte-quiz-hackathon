@@ -23,6 +23,14 @@
     easing: cubicOut,
   });
 
+  const moveForward = () => {
+    currentQuestion += 1;
+  };
+
+  const moveBackwards = () => {
+    currentQuestion -= 1;
+  };
+
   const updateProgress = (currentQuestion, totalQuestions) => {
     const progressVal = currentQuestion / totalQuestions;
     progress.set(progressVal);
@@ -102,7 +110,22 @@
     text-align: center;
     width: 90%;
     max-width: 500px;
-    overflow: hidden;
+    height: auto;
+    max-height: 250px;
+    overflow: auto;
+  }
+  label {
+    margin-right: 1rem;
+  }
+  .question {
+    font-size: 1.2rem;
+  }
+  button {
+    background-color: #1abc9c;
+  }
+  .navigation {
+    z-index: 100;
+    margin: 1rem 0rem 0rem 0rem;
   }
 
   @media (min-width: 576px) {
@@ -125,6 +148,12 @@
   {#if showCorrectAnimation}
     <LottieCorrect />
   {/if}
+  {#if !showScore}
+    <div class="navigation">
+      <button on:click={moveBackwards}>Back</button>
+      <button on:click={moveForward}>Next</button>
+    </div>
+  {/if}
   <div class="grid">
 
     {#if showScore}
@@ -140,7 +169,7 @@
           in:fly={{ y: 200, duration: 1000 }}
           out:fly={{ y: -100, duration: 1000 }}
           class="card">
-          <p>
+          <p class="question">
             <strong>{i + 1}.</strong>
             {sanitizeText(card.question)}
           </p>
