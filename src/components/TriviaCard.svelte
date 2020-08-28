@@ -47,14 +47,14 @@
     showCorrectAnimation = true;
     setTimeout(() => {
       showCorrectAnimation = false;
-    }, 1000);
+    }, 1500);
   };
 
   const showFalse = () => {
     showFalseAnimation = true;
     setTimeout(() => {
       showFalseAnimation = false;
-    }, 1000);
+    }, 1500);
   };
 
   const sanitizeText = (text) => {
@@ -113,6 +113,7 @@
     height: auto;
     max-height: 250px;
     overflow: auto;
+    z-index: -10;
   }
   label {
     margin-right: 1rem;
@@ -122,6 +123,7 @@
   }
   button {
     background-color: #1abc9c;
+    z-index: -1;
   }
   .navigation {
     z-index: 100;
