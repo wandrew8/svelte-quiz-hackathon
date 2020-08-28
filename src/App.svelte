@@ -15,6 +15,7 @@
   const getTrivia = async () => {
     trivia = [];
     answers = [];
+    score = 0;
     isLoading = true;
     const res = await fetch(
       `https://opentdb.com/api.php?amount=${numQuestions}&category=${category}&difficulty=${difficulty}&type=multiple`
